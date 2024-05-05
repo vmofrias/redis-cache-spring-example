@@ -10,7 +10,7 @@
 
 ## How to run
 
-##### Enter in the project's directory then run the script to build and start the application with its dependencies:
+##### Enter in the project's directory then execute this script to build and start the application with its dependencies:
 
 
 ```bash
