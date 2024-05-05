@@ -20,15 +20,15 @@
 
 ## How to use it
 
-##### Use these endpoints to:
+#### Use these endpoints to:
 
-### GET - Get all products without cache results
+#### GET - Get all products without cache results
 ##### - http://localhost:8080/products
 
-### GET - Get all products with cache results
+#### GET - Get all products with cache results
 ##### - http://localhost:8080/products/cache
 
-### POST - Add ten thousand products in the database and evict all caches
+#### POST - Add ten thousand products in the database and evict all caches
 ##### - http://localhost:8080/products
 
 
