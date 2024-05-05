@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+  postgres-db:
+    image: docker.io/library/postgres:15.2-alpine
+    container_name: postgres-db
+    environment:
+      - POSTGRES_USER=ldsk
+      - POSTGRES_PASSWORD=picanha
+      - POSTGRES_DB=products
+    ports:
+      - 5432:5432
+    volumes:
+      - ../postgres-data-remove-later:/var/lib/postgresql/data
+      - /etc/localtime:/etc/locatime:ro
+  redis:
+    image: docker.io/library/redis:7.2.4
+    container_name: redis
+    ports:
+      - 6379:6379
+  app:
+    image: local/app:1.0
+    container_name: app
+    environment:
+      - db_host=postgres-db
+      - db_user=ldsk
+      - db_password=picanha
+      - redis_host=redis
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres-db
+      - redis
